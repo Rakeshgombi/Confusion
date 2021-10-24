@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import Navbar from './Navbar';
 import Menu from './MenuComponent';
 import { DISHES } from '../Shared/dishes'
 import Dishdetail from './DishdetailComponent ';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 
 class Main extends Component {
   constructor(props) {
@@ -20,9 +21,10 @@ class Main extends Component {
   render() {
     return (
       <>
-        <Navbar />
+      <Header/>
         <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
         <Dishdetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
+        <Footer/>
       </>
     )
   }
